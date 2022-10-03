@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 18:22:57 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/03 20:31:01 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/03 22:28:18 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/03 22:59:09 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t len )
+int ft_atoi(const char *str)
 {
-	size_t x, b;
+	int x;
+	int a;
+	int y;
+	
+	y = 1;
+	a = 0;
 	x = 0;
-	b = 0;
-
-	if(needle[x] == '\0')
+	if(str[x] == '-')
+		y = -1;
+	if((str[x] >= 9 && str[x] <= 13) || str[x] == 32 || str[x] == 43 || str[x] == 45)
+		x++;
+	while(str[x] >= '0' && str[x] <= '9')
 	{
-		return 0;
-	}
-	while(x < len && haystack[x] != '\0')
-	{
-		if(haystack[x] == needle[b])
-		{
-			while(haystack[x + b] == needle[b] && (x+b) < len)
-				b++;
-			if(needle[b] == '\0')
-				return ((char *)haystack + x);
-			else
-				b = 0;
-		}
+		a = a * 10 + (str[x] - 48);
 		x++;
 	}
-		return 0;
+	return (a * y);
 }
