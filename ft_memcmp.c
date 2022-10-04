@@ -6,10 +6,11 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:00:18 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/03 18:22:23 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:22:57 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

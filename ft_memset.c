@@ -6,11 +6,11 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 15:22:21 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/01 18:56:53 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:23:08 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {

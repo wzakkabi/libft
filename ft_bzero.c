@@ -6,13 +6,12 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:04:36 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/01 19:53:04 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:23:44 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include <strings.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

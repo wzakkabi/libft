@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 19:20:01 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/04 20:23:01 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/03 23:11:19 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/04 20:22:04 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
+void *ft_calloc(size_t count, size_t size)
 {
-	size_t x;
-	x = 0;
-	
-	while(x < n)
-	{
-		((char *)dst)[x] = ((char *)src)[x];
-		x++;
-	}
-	return dst;
+	 void *p;
+	 p = malloc(count * size);
+	 ft_bzero(p, count);
+	 return p; 
 }

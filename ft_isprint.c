@@ -6,10 +6,11 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 20:23:56 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/09/30 21:51:02 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:22:46 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int	ft_isprint(char b)
 {

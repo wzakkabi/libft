@@ -6,10 +6,11 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 17:18:44 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/09/30 19:08:02 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:22:25 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int ft_isalpha(char b)
 {

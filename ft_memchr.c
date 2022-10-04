@@ -6,11 +6,11 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:08:44 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/03 18:00:29 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:22:51 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
+#include "libft.h"
 
 void *ft_memchr(const void *s, int c, size_t n)
 {

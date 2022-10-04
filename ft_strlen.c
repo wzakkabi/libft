@@ -6,10 +6,11 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 21:53:59 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/09/30 21:59:50 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/04 20:23:12 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 
 int ft_strlen(char *str)
 {
