@@ -9,8 +9,8 @@
 /*   Updated: 2022/10/03 01:10:04 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <stdio.h>
-#include <string.h>
+
+#include "libft.h"
 
 char *ft_strrchr(const char *s, int c)
 {
@@ -26,13 +26,4 @@ char *ft_strrchr(const char *s, int c)
         x--;
     }
     return '\0';
-}
-
-int main()
-{
-    char str[20];
-    strcpy(str, "heooolll");
-    //strchr(str, 'e');
-    printf("%s", strrchr(str, 'o'));
-    return 0;
 }

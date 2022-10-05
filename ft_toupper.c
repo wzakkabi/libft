@@ -10,9 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ctype.h>
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int ft_toupper(int c)
 {
@@ -21,14 +19,4 @@ int ft_toupper(int c)
 
     return c;
     
-}
-int main()
-{
-    char str[20];
-    char s[20];
-    //strcyp(str, "hello aw");
-    s[0] = ft_toupper('Q');
-    s[1] = '\0';
-    printf("%s", s);
-    return 0;
 }
