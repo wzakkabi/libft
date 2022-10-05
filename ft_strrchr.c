@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 18:53:06 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/02 18:53:06 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/03 01:10:04 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/03 01:10:04 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include <stdio.h>
 #include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+char *ft_strrchr(const char *s, int c)
 {
-	size_t x;
-	x = 0;
-	while(x < n && ((char *)src)[x] != '\0')
-	{
-		((char *)dest)[x] = ((char *)src)[x];
-		x++;
-	}
-	if(((char *)dest)[x] == '\0')
-	((char *)dest)[x] = '\0';
-	return dest;
+    int x;
+    x = 0;
+    while(s[x])
+      x++;
+    x--;
+    while(x > 0)
+    {
+        if(s[x] == c)
+            return (char *)s + x;
+        x--;
+    }
+    return '\0';
 }
-
 
 int main()
 {
-	char str[20];
-	char s[20];
-	strcpy(str, "hello haniya!!");
-	//strcpy(s, "eeeeee haniya!!");
-	memmove(s, str, 3);
-	printf("%s", s);
-	return 0;
+    char str[20];
+    strcpy(str, "heooolll");
+    //strchr(str, 'e');
+    printf("%s", strrchr(str, 'o'));
+    return 0;
 }

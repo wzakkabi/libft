@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/02 18:53:06 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/02 18:53:06 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/02 22:26:16 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/02 22:26:16 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <ctype.h>
 #include <string.h>
+#include <stdio.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+int ft_toupper(int c)
 {
-	size_t x;
-	x = 0;
-	while(x < n && ((char *)src)[x] != '\0')
-	{
-		((char *)dest)[x] = ((char *)src)[x];
-		x++;
-	}
-	if(((char *)dest)[x] == '\0')
-	((char *)dest)[x] = '\0';
-	return dest;
+    if(c >= 'a' && c <= 'z')
+    c = c - 32;
+
+    return c;
+    
 }
-
-
 int main()
 {
-	char str[20];
-	char s[20];
-	strcpy(str, "hello haniya!!");
-	//strcpy(s, "eeeeee haniya!!");
-	memmove(s, str, 3);
-	printf("%s", s);
-	return 0;
+    char str[20];
+    char s[20];
+    //strcyp(str, "hello aw");
+    s[0] = ft_toupper('Q');
+    s[1] = '\0';
+    printf("%s", s);
+    return 0;
 }
