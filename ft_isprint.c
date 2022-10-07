@@ -6,16 +6,15 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 20:23:56 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/04 20:22:46 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/06 04:16:17 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char b)
+int	ft_isprint(int b)
 {
-	if(b >= 32 && b <= 126)
-	return 1;
-	else
+	if (b >= 32 && b <= 126)
+		return 1;
 	return 0;
 }

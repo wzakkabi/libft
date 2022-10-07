@@ -6,7 +6,7 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:38:47 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/04 20:23:17 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:27:48 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 int	ft_strncmp(char *s1, const char *s2, size_t n)
 {
 	size_t x;
+	size_t	len;
+	len = ft_strlen(s1);
 	x = 0;
-	while(x < n && s1[x] && s2[x])
+	while(x < n && x <= len)
 	{
-		if(s1[x] == s2[x])
-		x++;
-		else
+		if(s1[x] != s2[x])
 		{
-			x = s1[x] - s2[x];
+			x = ((unsigned char *)s1)[x] -((unsigned char *)s2)[x];
 			return x;
 		}
+		x++;
 	}
 	return 0;
 }
