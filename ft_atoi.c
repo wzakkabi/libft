@@ -6,30 +6,30 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 22:28:18 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/07 03:53:44 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/07 04:38:32 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_atoi(const char *str)
+int	ft_atoi(const char *str)
 {
-	int  x;
-	int a;
-	int  y;
-	
+	int	x;
+	int	a;
+	int	y;
+
 	y = 1;
 	a = 0;
 	x = 0;
-	while((str[x] >= 9 && str[x] <= 13) || str[x] == 32)
+	while ((str[x] >= 9 && str[x] <= 13) || str[x] == 32)
 		x++;
-	if(str[x] == '-' || str[x] == '+')
+	if (str[x] == '-' || str[x] == '+')
 	{
-		if(str[x] == '-')
+		if (str[x] == '-')
 			y = -1;
 		x++;
 	}
-	while(str[x] >= '0' && str[x] <= '9')
+	while (str[x] >= '0' && str[x] <= '9')
 	{
 		a = a * 10 + (str[x] - 48);
 		x++;

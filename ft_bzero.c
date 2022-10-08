@@ -6,16 +6,17 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:04:36 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/05 18:11:05 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/07 04:36:19 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {
-	 size_t x = 0;
-	while(x < n)
+	size_t	x;
+
+	x = 0;
+	while (x < n)
 		((unsigned char *)s)[x++] = '\0';
 }
