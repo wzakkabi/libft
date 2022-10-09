@@ -1,24 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 21:53:59 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/08 04:35:05 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/08 05:02:02 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/08 06:43:03 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	b;
-	b = 0;
-	while(s[b] != '\0')
+	size_t	x;
+	size_t	len_dest;
+	size_t	len_source;
+	size_t	i;
+
+	x = 0;
+	i = ft_strlen(dst);
+	len_dest = ft_strlen(dst);
+	len_source = ft_strlen(src);
+	if (dstsize == 0)
+		return (len_source);
+	if (dstsize < len_dest)
+		return (len_source + dstsize);
+	while (src[x] && i < dstsize - 1)
 	{
-		b++;
+		dst[i] = src[x];
+		i++;
+		x++;
 	}
-	return b;
+	dst[i] = '\0';
+	return (len_dest + len_source);
 }

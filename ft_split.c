@@ -6,7 +6,7 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:39:24 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/06 23:51:37 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/08 06:35:31 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char **ft_split(char const *s, char c)
 	x = 0;
 
 	char **p;
-
+	
 	while(s[x])
 	{
 		if(s[x] == c)
@@ -53,8 +53,6 @@ char **ft_split(char const *s, char c)
 		if(s[x] == c)
 		{
 			i++;
-			printf("+");
-
 			crt = 0;
 		}
 		p[i][crt] = s[x];

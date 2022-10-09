@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 21:53:59 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/08 04:35:05 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/09 03:56:12 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/09 04:13:40 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	b;
-	b = 0;
-	while(s[b] != '\0')
-	{
-		b++;
-	}
-	return b;
+	char	*p;
+
+	if (!s1 || !s2)
+		return (NULL);
+	p = ft_calloc(ft_strlen(s1) + ft_strlen(s2) + 1, 1);
+	if (!p)
+		return (NULL);
+	ft_memmove(p, s1, ft_strlen(s1));
+	ft_memmove(p + ft_strlen(s1), s2, ft_strlen(s2));
+	return (p);
 }

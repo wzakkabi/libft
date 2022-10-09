@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/30 21:53:59 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/08 04:35:05 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/08 01:16:35 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/08 03:35:06 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strdup(const char *s1)
 {
-	size_t	b;
-	b = 0;
-	while(s[b] != '\0')
+	char	*p;
+	int		x;
+
+	x = 0;
+	p = ft_calloc(ft_strlen((char *)s1) + 1, sizeof(char));
+	if (!(p))
+		return (NULL);
+	while (s1[x])
 	{
-		b++;
+		p[x] = s1[x];
+		x++;
 	}
-	return b;
+	return (p);
 }
