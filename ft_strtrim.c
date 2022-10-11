@@ -6,59 +6,40 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 04:16:25 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/09 04:54:21 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/11 04:42:19 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+int ft_cmp(char const *s, char c)
+{
+	int x = 0, y = 1;
+	while(s[x])
+	{
+		if(s[x] == c)
+			y = 0;
+		x++;
+	}
+	return y;
+}
+
 char *ft_strtrim(char const *s1, char const *set)
 {
-	size_t x, first, end, final, ct;
+	int y = 1, first = 0, last = 0;
 	char *p;
-	if(!s1)
-		return NULL;
-	x = ft_strlen(set);
-	ct = 0;
-	final = 0;
-	first = ft_strncmp((char *)s1, set, x);
-	end = ft_strncmp((char *)s1 + (ft_strlen(s1) - x), set, x);
-	if(first == 0 && end == 0)
-		final = 2;
-	else if (first == 0 || end == 0)
-		final = 1;
-	if(final == 2)
+	while(y != 0 && s1[first])
 	{
-		p = ft_calloc(ft_strlen(s1) - (x * 2) + 1, 1);
-		if(!p)
-			return NULL;
-		while(s1[ct] && ct < (x * 2))
-		{
-			p[ct] = s1[ct + x];
-			ct++;
-		}
-		return p;
+		y = ft_cmp(set, s1[first]);
+		first++;
 	}
-	else if(first == 1)
+	y = 1;
+	last = ft_strlen(s1);
+	while(y != 0 && last != 0)
 	{
-		p = ft_calloc(ft_strlen(s1) - x + 1, 1);
-		if(!p)
-			return NULL;
-		while(s1[ct] && ct < x)
-		{
-			p[ct] = s1[ct + x];
-			ct++;
-		}
-		return (p);
+		y = ft_cmp(set, s1[last]);
+		last--;
 	}
-	else
-		p = ft_calloc(ft_strlen(s1) + 1, 1);
-		if(!p)
-			return NULL;
-		while(s1[ct])
-		{
-			p[ct] = s1[ct];
-			ct++;
-		}
+	p = ft_substr(s1 + first, 0, last - first);
 	return p;
 }

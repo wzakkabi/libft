@@ -6,7 +6,7 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 22:25:12 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/09 03:52:35 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/09 18:31:13 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,12 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
 
-	if(!s || start <= ft_strlen(s))
+	if(!s)
 		return NULL;
 	p = ft_calloc((len + 1), 1);
 	if(!p)
 		return 0;
-	ft_memmove(p, s + start, len);
+	if(start <= ft_strlen(s))
+		ft_memmove(p, s + start, len);
 	return p;
 }
