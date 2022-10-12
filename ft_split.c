@@ -6,82 +6,68 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:39:24 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/09 23:04:04 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/12 04:14:59 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
- #include <unistd.h>
- #include <stdio.h>
- #include <stdlib.h>
 
-int	ft_word(char const *s, char c)
+static	int	ft_word(char const *s, char c)
 {
-	size_t x = 0, word = 0;
-	while(s[x])
+	int	x;
+	int	word;
+
+	word = 0;
+	x = 0;
+	while (s[x] != '\0')
 	{
-		while (s[x] == c && s[x])
+		if (s[x] == c)
 			x++;
-		if(s[x] != '\0')
-			word++;
-		while(s[x] != c && s[x])
-			x++;
-	}
-	return word;
-}
-char	**ft_crt(char const *s, char c, char **p ,size_t word)
-{
-	size_t y = 0, x = 0, wd = 0;
-	while(wd < word)
-	{
-		while(s[x] == c && s[x])
-			x++;
-		y = x;
-		while(s[x] != c && s[x])
+		else
 		{
-			x++;
+			word++;
+			while (s[x] != c && s[x] != '\0')
+				x++;
 		}
+	}
+	return (word);
+}
+
+static	void	ft_crt(char const *s, char c, char **p)
+{
+	int	y;
+	int	x;
+	int	wd;
+	int	word;
+
+	x = 0;
+	y = 0;
+	wd = 0;
+	word = ft_word(s, c);
+	while (wd < word)
+	{
+		while (s[x] == c && s[x] != '\0')
+			x++;
+		if (s[x] != c && s[x - 1] == c)
+			y = x;
+		while (s[x] != c && s[x] != '\0')
+			x++;
 		p[wd] = ft_substr(s, y, x - y);
 		wd++;
 	}
-	return p;
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **p;
-	size_t word = 0;
-	if(!s)
-		return NULL;
-	if(c == 0)
-		{
-			p = (char **)malloc(sizeof(char *) * 1);
-			p[0] =(char *)malloc(ft_strlen(s) + 1);
-			p[0] = ft_substr(s, 0, ft_strlen(s));
-			return p;
-		}
-	word = ft_word(s, c);
-	p = (char **)malloc(sizeof(char *) * word);
-	if(!p)
-		return 0;
-	ft_crt(s, c, p, word);
-	return p;
-}
+	char	**p;
+	int		word;
 
-// int main()
-// {
-// 	char s[] = "    hello walid cv !";
-// 	s[0] = '\0';
-// 	char c;
-// 	c = 0;
-// 	char **p;
-// 	int x = 0;
-// 	p = ft_split(s, c);
-	
-// 	while(x < 4)
-// 	{
-// 		printf("%s\n", p[x]);
-// 		x++;
-// 	}
-// 	return 0;
-// }
+	if (!s)
+		return (NULL);
+	word = ft_word(s, c);
+	p = ft_calloc((word + 1), sizeof(char *));
+	if (!p)
+		return (NULL);
+	ft_crt(s, c, p);
+	return (p);
+}

@@ -6,7 +6,7 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:04:36 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/07 04:36:19 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/12 04:03:22 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,8 @@ void	ft_bzero(void *s, size_t n)
 
 	x = 0;
 	while (x < n)
-		((unsigned char *)s)[x++] = '\0';
+	{
+		((unsigned char *)s)[x] = '\0';
+		x++;
+	}
 }

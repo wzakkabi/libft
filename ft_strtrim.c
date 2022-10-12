@@ -6,40 +6,29 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/09 04:16:25 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/11 04:42:19 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/11 23:52:07 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int ft_cmp(char const *s, char c)
-{
-	int x = 0, y = 1;
-	while(s[x])
-	{
-		if(s[x] == c)
-			y = 0;
-		x++;
-	}
-	return y;
-}
 
 char *ft_strtrim(char const *s1, char const *set)
 {
-	int y = 1, first = 0, last = 0;
+	int first = 0, last = 0;
 	char *p;
-	while(y != 0 && s1[first])
-	{
-		y = ft_cmp(set, s1[first]);
+	if(!s1 || !set)
+		return NULL;
+	while(s1[first] && ft_strchr(set, s1[first]))
 		first++;
-	}
-	y = 1;
+	if(s1[first] == '\0')
+		return ft_calloc(sizeof(char *), 1);
 	last = ft_strlen(s1);
-	while(y != 0 && last != 0)
+	while(ft_strchr(set, s1[last]))
 	{
-		y = ft_cmp(set, s1[last]);
 		last--;
 	}
-	p = ft_substr(s1 + first, 0, last - first);
+	p = ft_substr(s1, first, last - first + 1);
 	return p;
 }
