@@ -6,13 +6,13 @@
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 16:38:47 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/12 01:12:50 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2022/10/15 19:58:48 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, const char *s2, size_t n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t x;
 	size_t	len;

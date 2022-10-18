@@ -1,20 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/12 05:31:40 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/16 20:17:43 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/17 17:30:48 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/17 18:01:32 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stdio.h>
+#include <unistd.h>
 #include "libft.h"
 
-static	int	ft_cntstr(long int nb)
+static	int	ft_cnt(long int nb)
 {
 	int	x;
 
@@ -32,29 +31,16 @@ static	int	ft_cntstr(long int nb)
 	return (x);
 }
 
-char	*ft_null(void)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*p;
-
-	p = ft_calloc(2, 1);
-	p[0] = 48;
-	return (p);
-}
-
-char	*ft_itoa(int n)
-{
-	int			x;
-	long int	nb;
-	long int	nm;
-	char		*p;
+	long	x;
+	long	nm;
+	long	nb;
+	char	p[100];
 
 	nb = n;
-	if (nb == 0)
-		return (p = ft_null());
-	x = ft_cntstr(nb);
-	p = ft_calloc((x + 1), sizeof(char));
-	if (!p)
-		return (NULL);
+	x = ft_cnt(nb);
+	p[x + 1] = '\0';
 	if (nb < 0)
 	{
 		nb = nb * -1;
@@ -66,5 +52,8 @@ char	*ft_itoa(int n)
 		p[--x] = nm + 48;
 		nb = nb / 10;
 	}
-	return (p);
+	if (n == 0)
+		ft_putchar_fd('0', fd);
+	else
+		ft_putstr_fd(p, fd);
 }

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 17:08:44 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/17 19:57:42 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/17 17:15:35 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/17 18:02:04 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	x;
 
+	if (!s)
+		return ;
 	x = 0;
-	while (x < n)
+	while (s[x])
 	{
-		if (((unsigned char *)s)[x] == (unsigned char)c)
-			return (((unsigned char *)s) + x);
+		write(fd, &s[x], 1);
 		x++;
 	}
-	return (NULL);
 }

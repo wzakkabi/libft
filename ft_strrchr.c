@@ -19,12 +19,12 @@ char	*ft_strrchr(const char *s, int c)
 	x = 0;
 	while (s[x])
 		x++;
-	if (c == 0)
+	if ((unsigned char)c == 0)
 		return ((char *)s + x);
 	x--;
 	while (x >= 0)
 	{
-		if (s[x] == c)
+		if (s[x] == (unsigned char)c)
 			return ((char *)s + x);
 		x--;
 	}
