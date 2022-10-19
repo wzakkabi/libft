@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 21:43:08 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/09 04:58:34 by wzakkabi         ###   ########.fr       */
+/*   Created: 2022/10/18 23:21:49 by wzakkabi          #+#    #+#             */
+/*   Updated: 2022/10/19 02:16:48 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 
-int main()
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
+	int	x;
 
-	char *s1 = "A";
-	printf("%lu[\n", strlcat(((void *)0), s1, 0));
-	return 0;
+	x = 0;
+	if (!s)
+		return ;
+	while (s[x])
+	{
+		f(x, (s + x));
+		x++;
+	}
 }
