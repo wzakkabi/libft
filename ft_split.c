@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wzakkabi <wzakkabi@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: wzakkabi <wzakkabi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 20:39:24 by wzakkabi          #+#    #+#             */
-/*   Updated: 2022/10/12 04:14:59 by wzakkabi         ###   ########.fr       */
+/*   Updated: 2023/03/14 01:45:46 by wzakkabi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static	int	ft_word(char const *s, char c)
+int	ft_word(char const *s, char c)
 {
 	int	x;
 	int	word;
