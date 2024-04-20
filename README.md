@@ -36,8 +36,7 @@ int main() {
 }
 ```
 
-## Credits
-The libft project was created by [walid zakkabi]. Special thanks to [(https://www.1337.ma/en/) and (https://www.42network.org)] for their contributions and support.
-
 ## Contact
 If you have any questions, suggestions, or issues regarding libft, feel free to contact [wzakkabi@gmail.com] or open an issue on the GitHub repository.
+
+The libft project was created by [walid zakkabi]. Special thanks to [(https://www.1337.ma/en/) and (https://www.42network.org)] for their contributions and support.
